@@ -22,12 +22,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Trigger Jenkins Job
+        uses: appleboy/jenkins-action@v0.0.2
+        with:
+          url: "https://05c3-2402-9d80-24a-1c00-5cd2-3245-8867-6c84.ngrok-free.app/"
+          user: "admin"
+          token: "117fbdc1fab405340c1918bf5ed52949e9"
+          job: "TriggerWithGIthubAction"
